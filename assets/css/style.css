@@ -35,6 +35,10 @@ header .row {
   }
 }
 
+header .row button {
+  white-space: nowrap;
+}
+
 main {
   -webkit-box-flex: 1;
       -ms-flex: 1 1 auto;
@@ -58,6 +62,14 @@ main .regionForm {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+}
+
+main #containerGifs .cardItem:hover {
+  background-color: white;
+}
+
+main #containerGifs .cardItem p {
+  margin: 0px;
 }
 
 footer {

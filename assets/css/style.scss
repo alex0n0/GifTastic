@@ -46,6 +46,10 @@ header {
             overflow-y: auto;
             flex-wrap: wrap;
         }
+
+        button {
+            white-space: nowrap;
+        }
     }
 }
 
@@ -67,6 +71,17 @@ main {
         overflow: hidden;
         text-overflow: ellipsis;
         white-space: nowrap;
+    }
+
+    #containerGifs {
+        .cardItem {
+            &:hover {
+                background-color: white;
+            }
+            p {
+                margin: 0px;
+            }
+        }
     }
 }
 
