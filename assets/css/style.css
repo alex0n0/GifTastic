@@ -16,7 +16,7 @@ header {
           flex: 0 0 auto;
 }
 
-header .row {
+header #containerButtons {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -27,7 +27,7 @@ header .row {
 }
 
 @media (min-width: 576px) {
-  header .row {
+  header #containerButtons {
     overflow-x: auto;
     overflow-y: auto;
     -ms-flex-wrap: wrap;
@@ -35,7 +35,7 @@ header .row {
   }
 }
 
-header .row button {
+header #containerButtons button {
   white-space: nowrap;
 }
 
@@ -70,6 +70,7 @@ main .cardItem {
 
 main .cardItem:hover {
   border: 1px solid rgba(0, 0, 0, 0.3);
+  background-color: rgba(255, 255, 255, 0.75);
 }
 
 main .cardItem p {
