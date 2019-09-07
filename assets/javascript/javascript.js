@@ -81,7 +81,7 @@ function retreiveGifFirstTime(e) {
             let fixedHeightGif = results[i].images.fixed_height.url;
             let fixedHeightStill = results[i].images.fixed_height_still.url
             img.attr('src', fixedHeightStill);
-            img.attr('class', 'img-fluid');
+            img.attr('class', 'img-fluid mb-3');
 
             img.on('mouseenter', function() {
                 img.attr('src', fixedHeightGif);
@@ -90,8 +90,25 @@ function retreiveGifFirstTime(e) {
                 img.attr('src', fixedHeightStill);
             });
             card.append(img);
-
-
+            
+            let saveButton = $('<button>');
+            saveButton.attr('class', 'btn btn-success mb-3 d-block');
+            saveButton.text('SAVE');
+            let save = false;
+            saveButton.on('click', function(){
+                save = !save;
+                if (save) {
+                    saveButton.text('REMOVE');
+                    saveButton.attr('class', 'btn btn-danger mb-3 d-block');
+                    $(this).parent().detach();
+                    $('#containerSavedGifs').append($(this).parent());
+                    $(this).parent().attr('class', 'col-6 col-sm-12 py-3 cardItem');
+                } else {
+                    $(this).parent().remove();
+                }
+            });
+            card.append(saveButton);
+            
             let pRating = $('<p></p>');
             pRating.html("<b>Rating:</b> " + results[i].rating);
             card.append(pRating);
