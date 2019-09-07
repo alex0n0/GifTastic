@@ -1,0 +1,76 @@
+$break-sm: 576px;
+$break-md: 768px;
+$break-lg: 992px;
+$break-xl: 1200px;
+
+@mixin break-sm {
+    @media (min-width: $break-sm) {
+        @content;
+    }
+}
+@mixin break-md {
+    @media (min-width: $break-md) {
+        @content;
+    }
+}
+@mixin break-lg {
+    @media (min-width: $break-lg) {
+        @content;
+    }
+}
+@mixin break-xl {
+    @media (min-width: $break-xl) {
+        @content;
+    }
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(0, 0, 0, 0.1)
+}
+
+header {
+    flex: 0 0 auto; 
+
+
+    .row {
+        display: flex;
+        flex-wrap: nowrap;
+        overflow-x: scroll;
+        overflow-y: hidden;
+    
+        @include break-sm {
+            overflow-x: auto;
+            overflow-y: auto;
+            flex-wrap: wrap;
+        }
+    }
+}
+
+main {
+    flex: 1 1 auto;
+
+    @include break-sm {
+
+        .regionForm {
+            order: 2;
+        }
+
+        .regionGifs {
+            order: 1;
+        }
+    }
+
+    .regionForm {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+}
+
+footer {
+    flex: 0 0 auto;
+    background-color: rgba(255, 0, 0, 0.2);
+}
